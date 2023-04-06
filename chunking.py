@@ -4,11 +4,11 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 import tiktoken
 import json
 from pprint import pprint
-# tiktoken.encoding_for_model('gpt-3.5-turbo')
-# Tokenizer used for gpt-3.5-turbo
-tokenizer = tiktoken.get_encoding('cl100k_base')
+import urllib.parse
 
-# create the length function
+
+tokenizer = tiktoken.encoding_for_model('gpt-3.5-turbo')
+# tokenizer = tiktoken.get_encoding('cl100k_base')
 def tiktoken_len(text):
     tokens = tokenizer.encode(
         text,
@@ -28,25 +28,23 @@ text_splitter = RecursiveCharacterTextSplitter(
 def main():
     # Get the courses from the file
     courses = retreive_courses()
-
-    # print(courses[0])
-    # chunks = text_splitter.split_text(courses[0]["page_content"])
-    # print(len(chunks))
-    # print("Chunk 0", chunks[0])
-    # print("Chunk 1", chunks[1])
-    # print(tiktoken_len(chunks[0]), tiktoken_len(chunks[1]))
-    # return
-
-
-    m = hashlib.md5()  # this will convert URL into unique ID
-
+    m = hashlib.md5()
     documents = []
 
     for course in tqdm(courses):
+        # Convert URL into unique ID
         url = course["metadata"]['source']
         m.update(url.encode('utf-8'))
         uid = m.hexdigest()[:12]
+
+        # Build chunks w/ prefix
         chunks = text_splitter.split_text(course["page_content"])
+        course_name = urllib.parse.unquote(url.split("/")[-1])
+        prefix = "Description of course " + course_name + "\n"        
+        for i in range(len(chunks)):
+            chunks[i] = prefix + chunks[i]
+        
+        # Format chunks
         for i, chunk in enumerate(chunks):
             documents.append({
                 'id': f'{uid}-{i}',
@@ -54,15 +52,22 @@ def main():
                 'source': url
             })
 
-    len(documents)
-    pprint(documents)
+    # len(documents)
+    # pprint(documents)
+    save_documents(documents)
 
 
 def retreive_courses():
     with open("course_contents.json", "r") as file:
         courses = json.load(file)
         return courses
-    
+
+
+def save_documents(documents):
+    with open('train.jsonl', 'w') as f:
+        for doc in documents:
+            f.write(json.dumps(doc) + '\n')
+
 
 if __name__ == '__main__':
     main()
