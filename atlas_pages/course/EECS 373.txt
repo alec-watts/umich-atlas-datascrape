@@ -1,0 +1,41 @@
+ Course Profile EECS 373 Introduction to Embedded System Design 
+          Principles of designing application-specific computer systems that interact with the physical world. Covers memory-mapped I/O, interrupts, analog interfacing, microprocessors, reconfigurable hardware, sensors, and actuators. Complex hardware/software system design and implementation. Substantial student-defined team design project.
+         Read more   Save to My Dashboard Credits: 4.0 Median Grade:
+        A- Enforced Prerequisites: (EECS 270 or CMPTRSC 270) & (EECS 370 or CMPTRSC 370) and Junior or Above; (C or better, No OP/F) 
+        Scroll down for more Information
+       Course Sections  This table shows sections of EECS 373 that are being offered in the Fall 2023 semester. Show sections offered for term: Winter 2023  Spring 2023  Spring/Summer 2023  Summer 2023  Fall 2023 Section(s) OfferedClass NumberStatusOpen SeatsEnrollment CapInstructorInstruction ModeDayTimeLocation+ Section 001 (Lecture) 10361Closed067Sample, AlansonIn Person MoWe  1:30PM - 3:00PM  1017 DOW  
+    Course profile data represents the past 5 academic years with the addition of the current active year.
+   Course Evaluations Learn more about evaluation data on our about page. 
+          502 responses for 1196 possible evaluations (42% response rate).
+          Desire to take  87%  of respondents expressed a strong desire to take this course.   Understanding  96%  of respondents thought this course advanced their understanding of the subject matter.   Workload  63%  of respondents perceived the workload for this course as heavier than other courses.   Expectations  84%  of respondents expressed knowing what was expected of them in this course.   Increased Interest  88%  of respondents expressed increased interest in the subject because of this course.  Grade History 
+    Grades are managed by instructors, and may be distributed differently by term or by section. For students who earned letter grades other than W, I, P or F, this graph shows the percentage of students who received each letter grade.
+    Median Grade:  A- 8%28%20%17%13%7%3%3%<1%0%<1%0%0%A+AA-B+BB-C+CC-D+DD-E00.10.20.3 Students who took EECS 373 and elected Late Withdrawal (W): 1.15% Students who took EECS 373 and elected Pass/Fail: 7.3% Incoming Student Level 
+    This graph shows students’ academic level when they started
+    
+      EECS 373
+    .
+   0%<1%<1%8%91%00.20.40.60.81All OthersGrad MastrUSpec/NCFDJuniorSenior Course Instructors 
+          This table shows instructors who have taught
+          EECS 373; adjunct lecturers are not included in this list.
+         Why is a specific instructor not showing up? Instructors are only shown if they are considered full-time and have taught this course in the past 5 academic years.  Course Instructors ↑↓ Terms Taught ↑↓ Most Recent Term ↑↓ Preparedness ↑↓ Clarity ↑↓ Respect ↑↓Sample, Alanson 5  Fall 2022  84%  79%  88% Dreslinski Jr, Ronald 3  Fall 2021  100%  100%  98% Dick, Robert 3  Winter 2023  86%  77%  98% Brehob, Mark 1  Fall 2018  100%  100%  100%  Declared Degrees 
+    This list shows what degree students who took
+    
+      EECS 373
+    
+    eventually declared.
+   Computer Engineering BSE 69% Computer Science BSE 13% Electrical Engineering BSE 9%  Engineering Honors Program  3% Computer Science BS 1% previous   1 / 5    next School/College Affiliation 
+  This list shows what colleges or schools students were affliated with when they took
+  EECS 373. Students may have changed their program or plan after taking this course
+  but that change is not being reflected in this list.
+  Undergraduate Engineering  98%  Undergraduate L S & A  2%  Undergraduate Non-Degree  <1%  Rackham  <1% previous   1 / 1    next Common Course Pathways This panel shows the most common courses students took before, during, and after being enrolled in
+    EECS 373. The percentage next to each course represents the percentage of students that have taken
+    
+      EECS 373
+     that also took the specified course.
+ Taken any time before EECS 373 EECS 370 97% EECS 280 86% EECS 270 83% EECS 281 81% EECS 203 78% EECS 215 72% ENGR 100 66% TCHNCLCM 300 61% MATH 216 56% MATH 215 52% previous   1 / 10    next Taken at the same time as EECS 373 EECS 216 21% TCHNCLCM 300 18% EECS 482 10% ENGR 355 10% EECS 442 9% EECS 461 9% STATS 412 9% EECS 498 8% EECS 281 8% EECS 388 7% previous   1 / 10    next Taken at any time after EECS 373 EECS 496 68% TCHNCLCM 496 63% EECS 473 38% EECS 461 37% EECS 482 26% EECS 442 21% EECS 498 20% EECS 470 19% EECS 467 19% EECS 598 13% previous   1 / 10    next Student Enrollment 
+    This graph shows the number of students each semester who completed
+    
+      EECS 373,
+    
+      including those who received letter grades W, I, P or F.
+   4647435958577173798475852017–182018–192019–202020–212021–222022–23020406080FAWN 
