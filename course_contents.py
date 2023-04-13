@@ -1,7 +1,6 @@
 from playwright.async_api import async_playwright
 import asyncio
 from asyncio import as_completed
-
 from bs4 import BeautifulSoup
 import json
 import os
@@ -10,29 +9,33 @@ from tqdm.auto import tqdm
 
 load_dotenv()
 
-username = os.getenv("UMICH_USERNAME")
-password = os.getenv("UMICH_PASSWORD")
+username = os.getenv('UMICH_USERNAME')
+password = os.getenv('UMICH_PASSWORD')
 
-base_url = 'https://atlas.ai.umich.edu/'
-atlas_url = "https://atlas.ai.umich.edu/courses/?subject=EECS&page=1"
+base_url = 'https://atlas.ai.umich.edu'
+atlas_url = 'https://atlas.ai.umich.edu/courses/?subject=EECS&page=1'
 
 course_urls = []
 course_content = []
 
 # Read course urls from course_urls.txt
-with open("course_urls.txt", "r") as file:
+with open('course_urls.txt', 'r') as file:
     course_urls = file.readlines()
 
 
 async def fetch_course_content(url, context, semaphore):
     async with semaphore:
         page = await context.new_page()
-        await page.goto(url, wait_until="networkidle")
+        await page.goto(url, wait_until='networkidle')
         soup = BeautifulSoup(await page.content(), 'html.parser')
-        content = soup.find("div", {"class": "wrapper container app"})
+        content = soup.find('div', {'class': 'wrapper container app'})
+
+        page_content = ''
+        if content is not None:
+            page_content = content.text
 
         page_object = {
-            'page_content': content.text,
+            'page_content': page_content,
             'metadata': {'source': url}
         }
         await page.close()
@@ -41,12 +44,12 @@ async def fetch_course_content(url, context, semaphore):
 
 async def main():
     async with async_playwright() as p:
-        # browser = await p.chromium.launch(headless=False, slow_mo=50)
-        browser = await p.chromium.launch()
+        browser = await p.chromium.launch(headless=False, slow_mo=50)
+        # browser = await p.chromium.launch()
         context = await browser.new_context()
 
         page = await context.new_page()
-        await page.goto(atlas_url, wait_until="networkidle")
+        await page.goto(atlas_url, wait_until='networkidle')
         await page.fill('input#login', username)
         await page.fill('input#password', password)
         await page.click('input#loginSubmit')
@@ -64,7 +67,7 @@ async def main():
             tasks.append(task)
 
         # course_content.extend(await asyncio.gather(*tasks))
-        with tqdm(total=len(tasks), desc="Fetching course content") as pbar:
+        with tqdm(total=len(tasks), desc='Fetching course content') as pbar:
             for task in asyncio.as_completed(tasks):
                 content = await task
                 course_content.append(content)
@@ -74,5 +77,5 @@ async def main():
 
 asyncio.run(main())
 
-with open("course_contents.json", "w") as file:
+with open('course_contents.json', 'w') as file:
     file.write(json.dumps(course_content, indent=4))

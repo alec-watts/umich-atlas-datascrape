@@ -33,14 +33,15 @@ def main():
 
     for course in tqdm(courses):
         # Convert URL into unique ID
-        url = course["metadata"]['source']
+        url = course['metadata']['source']
+        print(url)
         m.update(url.encode('utf-8'))
         uid = m.hexdigest()[:12]
 
         # Build chunks w/ prefix
-        chunks = text_splitter.split_text(course["page_content"])
-        course_name = urllib.parse.unquote(url.split("/")[-1])
-        prefix = "Description of course " + course_name + "\n"        
+        chunks = text_splitter.split_text(course['page_content'])
+        course_name = urllib.parse.unquote(url.split('/')[-2])
+        prefix = 'Description of course ' + course_name + ': \n'      
         for i in range(len(chunks)):
             chunks[i] = prefix + chunks[i]
         
@@ -49,7 +50,7 @@ def main():
             documents.append({
                 'id': f'{uid}-{i}',
                 'text': chunk,
-                'source': url
+                'metadata': { 'url': url }
             })
 
     # len(documents)
@@ -58,12 +59,13 @@ def main():
 
 
 def retreive_courses():
-    with open("course_contents.json", "r") as file:
+    with open('course_contents.json', 'r') as file:
         courses = json.load(file)
         return courses
 
 
 def save_documents(documents):
+    # Compatible with Hugging Face's datasets
     with open('train.jsonl', 'w') as f:
         for doc in documents:
             f.write(json.dumps(doc) + '\n')

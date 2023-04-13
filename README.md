@@ -1,12 +1,17 @@
 https://www.youtube.com/watch?v=Xjv1sY630Uc&ab_channel=TechWithTim
 
-https://www.youtube.com/watch?v=hpePPqKxNq8&ab_channel=JamesBriggs
+https://www.youtube.com/watch?v=hpePPqKxNq8&t=2184s&ab_channel=JamesBriggs
 
 https://www.youtube.com/watch?v=eqOfr4AGLk8&ab_channel=JamesBriggs
 
 https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/
 
-# https://bulletin.engin.umich.edu/depts/che/grad/
+https://bulletin.engin.umich.edu/depts/che/grad/
 
 
-# JWT: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImF3YXR0cyJ9.BTXoHsVPf9ByvdcSDVcNzPmDL1gFBE1GG9udRNG59qg
+Hugging face: https://huggingface.co/datasets/alecwatts/umich-course-descriptions
+ 
+
+Description for model: Use this tool to get information about courses at the University of Michigan. Use this database for course evaluations, desriptions, grade history, median grade, and instructors/professors.
+
+Description for human: Accelerate your UM course selection.
